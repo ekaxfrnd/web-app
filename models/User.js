@@ -21,6 +21,6 @@ const User = pool.define('user', {
     }
 })
 
-User.sync({ force: true })
+User.sync()
 
 module.exports = User

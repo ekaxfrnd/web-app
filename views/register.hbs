@@ -1,26 +1,44 @@
 <div class="row mt-5">
     <div class="col-md-4 offset-md-4">
+        {{#if success}}
+        <div class="alert alert-danger" role="alert">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{success}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        {{/if}}
+        {{#if warning}}
+        <div class="alert alert-danger" role="alert">
+            {{warning}}
+        </div>
+        {{/if}}
         <div class="card">
             <div class="card-body">
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" name="firstName">
-                    <label for="firstName">First Name</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" name="lastName">
-                    <label for="lastName">Last Name</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="username" placeholder="Enter your username" name="username">
-                    <label for="floatingFirstName">Username</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Enter your password" name="password">
-                    <label for="floatingPassword">Password</label>
-                </div>
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-primary btn-block">Register</button>
-                </div>
+                <form action="/user/register" method="post">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name"
+                            name="firstName">
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name"
+                            name="lastName">
+                        <label for="lastName">Last Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email">
+                        <label for="floatingFirstName">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword"
+                            placeholder="Enter your password" name="password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
